@@ -10,38 +10,50 @@
     <script src="js/app.js"></script>
 
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Blueprints</h1>
 
-    <body>
-    <div class="container">
-        <h2 id="authorName">Autor: </h2>
-
-        <input type="text" id="authorInput" placeholder="Ingrese autor"/>
-        <button id="getBlueprintsBtn" class="btn btn-primary">Consultar planos</button>
-
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Nombre del plano</th>
-                <th># Puntos</th>
-            </tr>
-            </thead>
-            <tbody id="table-body">
-            </tbody>
-        </table>
-
-        <h4 id="totalPoints">Total de puntos: 0</h4>
+    <div class="form-inline">
+        <label for="authorInput">Author:</label>
+        <input type="text" id="authorInput" class="form-control" placeholder="Ingrese autor">
+        <button id="getBlueprintsBtn" class="btn btn-primary">Get blueprints</button>
     </div>
 
-    <script>
-        $("#getBlueprintsBtn").on("click", function () {
-            var author = $("#authorInput").val();
-            if (author) {
-                app.setAuthorName(author);
-                app.updateBlueprints(author);
-            } else {
-                alert("Ingrese un autor válido.");
-            }
-        });
-    </script>
-    </body>
-</head>
+    <hr>
+
+    <h3 id="authorName">Author: </h3>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Blueprint name</th>
+            <th>Number of points</th>
+            <th>Open</th>
+        </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <h4 id="totalPoints">Total user points: 0</h4>
+
+    <hr>
+
+    <h3 id="currentBlueprint">Current blueprint: none</h3>
+    <canvas id="blueprintCanvas" width="600" height="400" style="border:1px solid black;"></canvas>
+</div>
+
+<script>
+    $("#getBlueprintsBtn").on("click", function () {
+        var author = $("#authorInput").val();
+        if (author) {
+            app.setAuthorName(author);
+            app.updateBlueprints(author);
+        } else {
+            alert("Ingrese un autor válido.");
+        }
+    });
+</script>
+</body>
