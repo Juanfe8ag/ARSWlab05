@@ -8,7 +8,7 @@ var apimock = (function () {
             name: "test",
             points: [
                 {x: 0, y: 0},
-                {x: 0, y: 0},
+                {x: 5, y: 0},
                 {x: 10, y: 10},
                 {x: 20, y: 20}
             ]
@@ -17,10 +17,21 @@ var apimock = (function () {
             author: "juan",
             name: "casa",
             points: [
-                {x: 5, y: 5},
-                {x: 10, y: 10},
-                {x: 15, y: 15},
-                {x: 20, y: 5}
+                {x:10,y:10},
+                {x:50,y:10},
+                {x:50,y:50},
+                {x:10,y:50}
+            ]
+        },
+        {
+            author: "juan",
+            name: "estrella",
+            points: [
+                {x:100,y:100},
+                {x:120,y:150},
+                {x:80,y:150},
+                {x:140,y:120},
+                {x:60,y:120}
             ]
         }
     ];
